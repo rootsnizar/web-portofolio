@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hallo Guys</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              montserrat: ['Montserrat', 'sans-serif'],
+            },
+          },
+        },
+      };
+    
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-slide-up {
+        animation: slideUp 1s ease-out forwards;
+        animation-delay: 0.5s;
+      }
+      .theme-toggle {
+        cursor: pointer;
+        font-size: 1.25rem;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-montserrat transition-colors duration-300">
+<header class="bg-white dark:bg-gray-800 shadow fixed w-full z-20 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    
+    <!-- Logo kiri -->
+    <div class="flex-shrink-0 text-xl font-bold text-gray-900 dark:text-gray-100">
+       
+    </div>
+
+    <!-- Right buttons: theme toggle + mobile burger -->
+    <div class="flex items-center space-x-3 md:hidden">
+      <!-- Theme Toggle -->
+      <button
+        id="theme-toggle"
+        class="p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
+        aria-label="Toggle Dark Mode"
+      >
+      </button>
+
+      <!-- Mobile Toggle Burger -->
+      <button
+        id="mobile-menu-toggle"
+        class="text-4xl text-gray-700 dark:text-white focus:outline-none"
+        aria-label="Toggle Menu"
+      >
+        ☰
+      </button>
+    </div>
+
+    <!-- Menu tengah desktop -->
+    <nav
+      id="nav-links"
+      class="hidden md:flex space-x-6 absolute left-1/2 transform -translate-x-1/2"
+    >
+      <a href="#about"
+        class="font-bold px-5 py-2 rounded-xl hover:bg-neutral-200 hover:dark:bg-gray-700 transition"
+        >Tentang</a
+      >
+      <a href="#projects"
+        class="font-bold px-5 py-2 rounded-xl hover:bg-neutral-200 hover:dark:bg-gray-700 transition"
+        >Proyek</a
+      >
+      <a href="#contact"
+        class="font-bold px-5 py-2 rounded-xl hover:bg-neutral-200 hover:dark:bg-gray-700 transition"
+        >Kontak</a
+      >
+    </nav>
+
+    <!-- Theme toggle untuk desktop (opsional, jika mau) -->
+    <button
+      id="theme-toggle-desktop"
+      class="hidden md:block text-xl text-gray-700 dark:text-white p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
+      aria-label="Toggle Dark Mode"
+    >
+    </button>
+  </div>
+
+  <!-- Mobile Menu dropdown -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden px-4 pb-4 border-t border-gray-200 dark:border-gray-700"
+  >
+    <a
+      href="#about"
+      class="block py-2 text-sm font-semibold hover:text-blue-500 dark:hover:text-blue-400"
+      >Tentang</a
+    >
+    <a
+      href="#projects"
+      class="block py-2 text-sm font-semibold hover:text-blue-500 dark:hover:text-blue-400"
+      >Proyek</a
+    >
+    <a
+      href="#contact"
+      class="block py-2 text-sm font-semibold hover:text-blue-500 dark:hover:text-blue-400"
+      >Kontak</a
+    >
+  </div>
+  </header>
+
+    <!-- Hero -->
+    <section class="h-screen flex items-center justify-center text-center bg-cover bg-center pt-20" style="background-image: url('bg.jpg');">
+      <div data-aos="fade-up">
+        <h2 class="text-4xl md:text-7xl font-bold mb-4 text-yellow-500 drop-shadow">Hallo Semua.</h2>
+        <p class="text-lg md:text-2xl mb-6 text-white drop-shadow"> Selamat Datang di Website Saya</p>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+      <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
+        <h3 class="text-3xl font-bold mb-4">Tentang Saya</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Saya adalah developer yang fokus di frontend development, suka bikin UI yang bersih dan user-friendly.
+          Pengalaman 3 tahun lebih di dunia pengembangan web, dari startup sampai proyek pribadi.
+        </p>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="projects" class="py-20 bg-gradient-to-br from-blue-100 to-purple-200 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">Beberapa Proyek Saya</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow" data-aos="zoom-in">
+            <h4 class="text-xl font-semibold mb-2">Website Toko Online</h4>
+            <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">Next.js + Tailwind</p>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">Lihat Proyek</a>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow" data-aos="zoom-in" data-aos-delay="100">
+            <h4 class="text-xl font-semibold mb-2">Aplikasi Dashboard AIS</h4>
+            <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">Leaflet + Node.js + Socket.io</p>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">Lihat Proyek</a>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow" data-aos="zoom-in" data-aos-delay="200">
+            <h4 class="text-xl font-semibold mb-2">Landing Page Event</h4>
+            <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">Static HTML + CSS</p>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">Lihat Proyek</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+      <div class="max-w-2xl mx-auto px-4 text-center" data-aos="fade-up">
+        <h3 class="text-3xl font-bold mb-10">Temukan Saya di</h3>
+
+      <div class="mt-2 flex justify-center space-x-5">
+      <!-- Email -->
+      <a href="mailto:muhammadivan171@gmail.com" target="_blank" aria-label="Email" 
+        class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition 
+                p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 inline-block" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+          <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/username" target="_blank" aria-label="Instagram" 
+        class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition 
+                p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37a4 4 0 11-4.73-4.73 4 4 0 014.73 4.73z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/username" target="_blank" aria-label="LinkedIn" 
+        class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition 
+                p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 inline-block" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 3a2 2 0 110 4 2 2 0 010-4z"/>
+        </svg>
+      </a>
+
+      <!-- Twitter -->
+      <a href="https://twitter.com/username" target="_blank" aria-label="Twitter" 
+        class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition 
+                p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 inline-block" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M8.29 20c7.547 0 11.675-6.155 11.675-11.49 0-.175 0-.349-.012-.52A8.18 8.18 0 0022 5.92a8.19 8.19 0 01-2.357.635 4.117 4.117 0 001.804-2.27 8.224 8.224 0 01-2.605.978 4.1 4.1 0 00-7.025 3.738A11.65 11.65 0 013 4.795a4.093 4.093 0 001.27 5.47 4.073 4.073 0 01-1.858-.51v.05a4.1 4.1 0 003.292 4.02 4.095 4.095 0 01-1.852.07 4.1 4.1 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+        </svg>
+      </a>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up" class="bg-blue-900 dark:bg-gray-800 text-center py-3 text-gray-50 text-sm font-semibold transition-colors duration-300">
+      <p>Copyright by Ivan Nizar - All rights reserved</p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+      });
+    </script>
+
+    <!-- Dark Mode + Mobile Menu Toggle -->
+    <script>
+      // === Theme Toggle ===
+    // SVG untuk icon Moon (Dark Mode)
+      const moonIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-9">
+        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+      </svg>
+      `;
+
+      // SVG untuk icon Sun (Light Mode)
+      const sunIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-9">
+        <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+      </svg>
+      `;
+
+      const html = document.documentElement;
+      const themeToggles = document.querySelectorAll("#theme-toggle, #theme-toggle-desktop");
+
+      // Inisialisasi tema saat load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        html.classList.add("dark");
+        themeToggles.forEach((btn) => (btn.innerHTML = sunIcon)); // switch ke icon matahari (sun)
+      } else {
+        html.classList.remove("dark");
+        themeToggles.forEach((btn) => (btn.innerHTML = moonIcon)); // icon bulan (moon)
+      }
+
+      // Toggle tema saat tombol diklik
+      themeToggles.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const isDark = html.classList.toggle("dark");
+          localStorage.theme = isDark ? "dark" : "light";
+          themeToggles.forEach((b) => (b.innerHTML = isDark ? sunIcon : moonIcon));
+        });
+      });
+
+      // === Mobile Menu Toggle ===
+      const menuToggleBtn = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggleBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
